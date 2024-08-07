@@ -1,0 +1,31 @@
+---
+layout: base
+---
+<!-- home.html start -->
+
+<section>
+
+{% for post in site.posts limit:5 %}
+
+  <div class="card bg-base-100 w-96 shadow-xl mb-4">
+
+    <figure>
+      <img src="https://thumbor.10w.uk/unsafe/480x0/smart/{{ post.image }}"
+        alt="Drone image of a field with construction happening." />
+    </figure>
+    <div class="card-body">
+    <a href="{{ post.url | relative_url }}">
+    <h3>{{ post.title | escape }}</h3>
+    </a>
+      {% if site.show_excerpts %}
+      {{ post.excerpt }}
+      {% endif %}
+  {{ post.date | date: date_format }}     
+
+    </div>
+
+  </div>
+
+{% endfor %}
+</section>
+<!-- home.html end -->

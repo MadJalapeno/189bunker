@@ -1,0 +1,58 @@
+<div class="nav flex flex-col overflow-hidden sidebar shadow-md  bg-base-300 opacity-[.81] rounded-md pb-2">
+
+    <!-- check if on homepage -->  
+    <div class="flex flex-row mt-2">  
+    {% if page.source == "home" %}
+      <div class="flex-auto pr-2 text-right font-semibold mr-2">
+        Home
+      </div>
+      <div class="flex-none w-8">
+        {% svg_mdi folder-open-outline %}
+      </div>
+    {% else %}
+      <div class="flex-auto pr-2 text-right mr-2">
+        <a href="/" class="nav-link link-hover">  
+        Home  
+        </a>
+      </div>
+      <div class="flex-none w-8">
+        {% svg_mdi folder-outline %}
+      </div>
+    {% endif %}
+    </div>
+      
+    {% for section in site.data.sections %}
+    
+    <!-- are we on the page -->
+    <div class="flex flex-row mt-2">
+    <!-- {{ page.source }} {{ section }}-->
+      {% if page.source == section in %}
+    
+      <div class="flex-auto pr-2 text-right mr-2">
+        {{ section | capitalize }}
+      </div>
+      <div class="flex-none w-8">
+        {% svg_mdi folder-open-outline %}
+      </div>
+    
+    {% else %}
+    
+    <!-- or are we not on the page -->
+        <div class="flex-auto pr-2 text-right mr-2">
+      <a href="/{{ section | slugify }}" class="link-hover">
+        {{ section | capitalize}}   
+      </a>    
+      </div>
+      <div class="flex-none w-8">
+        {% svg_mdi folder-outline %}
+      </div>
+    
+    {% endif %}
+    
+    </div>
+    {% endfor %}
+        
+      </ul>
+      <div class="min-h-4"></div>
+      
+      </div>
