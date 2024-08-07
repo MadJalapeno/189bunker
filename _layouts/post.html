@@ -1,0 +1,34 @@
+---
+layout: base
+---
+
+<!--start post.html -->
+
+<time class="font-mono">{{ page.date | date_to_string }}</time>
+
+<figure>
+  <img src="https://thumbor.10w.uk/unsafe/960x0/smart/{{ page.hero-image | absolute_url }}"
+    alt="{{ page.hero-alt }}" />
+</figure>
+
+<div class="text-lg italic">      
+  <a href="{{ page.url }}" title="{{ post.title }}">
+  {{ page.title }}
+  </a>
+</div>
+
+<div class="px-4">
+
+    <article class="prose text-base-content">       {{ page.content }}</article>
+
+  </div>
+
+<div class="plain">
+{% for eachTag in page.tags %}
+      
+<a href="/tags/{{ eachTag }}">
+  <div class="btn btn-xs m-1">{{ eachTag }}</div>
+  </a>
+
+  {% endfor %}
+<!-- end post.html -->     
