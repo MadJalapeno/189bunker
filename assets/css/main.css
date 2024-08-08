@@ -29,3 +29,11 @@
 @layer utilities {
 
 }
+
+a {
+  @apply text-primary;
+}
+
+a :hover {
+  @apply text-secondary;
+}
