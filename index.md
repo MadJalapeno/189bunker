@@ -26,7 +26,7 @@ pagination:
     <time class="font-mono">{{ post.date | date_to_string }}</time>
 
     <figure>
-      <img src="https://thumbor.10w.uk/unsafe/480x0/smart{{ post.hero-image | absolute_url }}"
+      <img src="https://thumbor.10w.uk/unsafe/480x0/smart/{{ post.hero-image | absolute_url }}"
         alt="{{ post.hero-alt }}" />
     </figure>
 
