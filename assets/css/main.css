@@ -24,12 +24,6 @@
       
     }
 */
-  }
-
-@layer utilities {
-
-}
-
 a {
   @apply text-primary;
 }
@@ -37,3 +31,10 @@ a {
 a :hover {
   @apply text-secondary;
 }
+
+  }
+
+@layer utilities {
+
+}
+

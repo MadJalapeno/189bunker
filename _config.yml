@@ -23,7 +23,7 @@ email: myemail@189bunker.com
 description: >- # this means to ignore newlines until "baseurl:"
   As they build new houses next to us keeping a journal of the build
   so I can keep an eye on our trees.
-url: "https://189bunker.com/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://189bunker.com" # the base hostname & protocol for your site, e.g. http://example.com
     
 # Build settings
 plugins:
