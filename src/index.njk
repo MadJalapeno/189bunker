@@ -1,0 +1,26 @@
+---js
+const eleventyNavigation = {
+	key: "Home",
+	order: 1,
+};
+
+const layout = "base.njk";
+const numberOfLatestPostsToShow = 5;
+---
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+
+{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+
+<div class=" grid grid-cols-1 gap-4"> 
+{%- for post in postslist | reverse %}
+    {% include "postTile.njk" %}
+{% endfor %}
+</div>
+
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+{% if morePosts > 0 %}
+<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/archive/">the archive</a>.</p>
+{% endif %}

@@ -1,0 +1,20 @@
+{% include "head.njk" %}
+
+<body>
+
+  <div class="grid grid-cols-4 max-w-7xl min-h-[80vh] mx-auto bg-gray-100">
+
+    {% include "head.njk" %}
+
+    <header class="col-span-4 bg-gray-800 text-white p-4">
+      <h1 class="text-2xl">189 Bunker Hill, Stratham, NH 03885</h1>
+    </header>
+
+    <main class="col-span-4 p-4">
+      {{ content | safe }}
+    </main>
+
+
+{% include "footer.njk" %}
+
+<body>

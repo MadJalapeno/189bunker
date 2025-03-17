@@ -1,0 +1,44 @@
+<div class="nav flex flex-col overflow-hidden sidebar shadow-md  bg-base-300 opacity-[.81] rounded-md pb-2">
+
+    <!-- check if on homepage -->  
+    <div class="flex flex-row mt-2">  
+      <div class="flex-auto pr-2 text-right font-semibold mr-2">
+        Home
+      </div>
+      <div class="flex-none w-8">
+      </div>
+      <div class="flex-auto pr-2 text-right mr-2">
+        <a href="/" class="nav-link link-hover">  
+        Home  
+        </a>
+      </div>
+      <div class="flex-none w-8">
+      </div>
+    </div>
+      
+    
+    <!-- are we on the page -->
+    <div class="flex flex-row mt-2">
+    <!-- {{ page.source }} {{ section }}-->
+
+      <div class="flex-auto pr-2 text-right mr-2">
+      </div>
+      <div class="flex-none w-8">
+      </div>
+    
+    
+    <!-- or are we not on the page -->
+        <div class="flex-auto pr-2 text-right mr-2">
+      <a href="/{{ section | slugify }}" class="link-hover">
+        {{ section }}   
+      </a>    
+      </div>
+      <div class="flex-none w-8">
+      </div>
+    
+    
+    </div>
+        
+      <div class="min-h-4"></div>
+      
+      </div>

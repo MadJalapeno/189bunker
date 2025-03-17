@@ -1,0 +1,19 @@
+
+  <div class="p-4 mb-4 rounded-lg shadow-md">
+    <div>		
+      <a href="{{ post.url }}" class="postlist-link">
+          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+      </a>
+    </div>
+
+    <img
+      src="{{ post.data.heroimage }}"
+      alt="{{ post.data.heroalt}}"
+      width="600"
+      eleventy:widths="600"
+      class="rounded-md" />
+
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
+      {{ post.date | readableDate("LLLL yyyy") }}
+    </time>
+</div>
