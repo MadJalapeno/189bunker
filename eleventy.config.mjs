@@ -49,7 +49,7 @@ export default function (eleventyConfig) {
     return String(value).charAt(0).toUpperCase() + String(value).slice(1);
   });
 
-	eleventyConfig.addPlugin(pluginFilters);
+  eleventyConfig.addPlugin(pluginFilters);
 };
 
 export const config = {
