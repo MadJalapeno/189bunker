@@ -9,4 +9,4 @@ tags:
 heroimage: /assets/images/2024/10/DJI_0141.JPG
 heroalt: looking west to the sea
 ---
-We live in a beautiful place. Looking west to the sea.
+We live in a beautiful part of the world. Looking west to the sea.

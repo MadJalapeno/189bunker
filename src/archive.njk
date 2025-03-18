@@ -3,7 +3,7 @@ title: Archive
 layout: base.njk
 pagination:
   data: collections.posts
-  size: 5
+  size: 10
   alias: postslist
   reverse: true
 ---
@@ -32,22 +32,27 @@ pagination:
   </div>
 {% endif %}
 
-
+<div class=" grid grid-cols-1 gap-4"> 
 {%- for post in postslist %}
-
   {% include "postTile.njk" %}
-
 {% endfor %}
+</div>
 
-<nav class="pagination">
+<nav class="">
+  <div class="grid grid-cols-2 gap-4">
+    <div class="text-right">
 	{% if pagination.previousPageLink %}
-	  <a class="pagination__item" href="{{ pagination.previousPageHref }}">Previous</a>
+	  <a class="underline decoration-primary hover:decoration-double" href="{{ pagination.previousPageHref }}">← Previous</a>
 	{% else %}
 	  <span class="pagination__item">Previous</span>
 	{% endif %}
+      </div>
+      <div>
 	{% if pagination.nextPageLink %}
-	  <a class="pagination__item" href="{{ pagination.nextPageHref}}">Next</a>
+	  <a class="underline decoration-primary hover:decoration-double" href="{{ pagination.nextPageHref}}">Next →</a>
 	{% else %}
 	  <span class="pagination__item">Next</span>
 	{% endif %}
+      </div>
+    </div>
   </nav>

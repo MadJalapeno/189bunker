@@ -31,6 +31,18 @@
         {{ post.content | safe  }}
         </div>
 
+        {% if post.data.images %}
+        <div class="flex flex-wrap mt-2">
+        {% for image in post.data.images %}
+        <img src="{{ image.src }}"
+          alt="{{ image.alt }}" 
+          class="rounded-md mr-2" 
+          eleventy:widths="100px"
+          width="100px"/>
+        {% endfor %}
+        </div>
+        {% endif %}
+
        <div class="mt-2 bottom-0 absolute">
          {% if post.data.tags %}
          {% for tag in post.data.tags %}
