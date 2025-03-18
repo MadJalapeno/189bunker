@@ -22,6 +22,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
   
   eleventyConfig.addWatchTarget("src");
+  eleventyConfig.setServerOptions({
+    liveReload: true
+  });
 
   // read data from .env file to determine dev or prod
   eleventyConfig.addGlobalData("env", process.env.ELEVENTY_ENV);

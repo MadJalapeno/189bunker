@@ -9,4 +9,4 @@ tags:
 heroimage: /assets/images/2025/03/DJI_0158.JPG
 heroalt: the first house foundation
 ---
-Guess they do the walls first, and then the floors.
+Looks like they do the walls first, and then the floors.

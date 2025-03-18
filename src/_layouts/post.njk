@@ -5,17 +5,13 @@ layout: base.njk
   <div>
     <h1 class="text-2xl mb-4">{{ title }}</h1>
   </div>
-
+  <div class="text-sm mb-4">
+    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+  </div>
   <div>
     <a href="{{ heroimage }}">
       <img src="{{ heroimage }}" alt="{{ heroalt }}" width="1280" eleventy:widths="1280" class="rounded-md w-full" />
     </a>
-  </div>
-
-  <div>
-    <ul class="">
-      <li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-    </ul>
   </div>
 
 {{ content | safe }}
@@ -47,9 +43,21 @@ layout: base.njk
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
+<div class="grid grid-cols-2 gap-4">
+	{%- if previousPost %}
+  <div class="">
+    <div class="text-right">← Previous</div> 
+    <div class="text-right text-lg">
+      <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+    </div>
+  </div>
+  {% endif %} 
+	{%- if nextPost %}
+  <div class="">
+    <div>Next →</div>
+    <div class="text-lg">
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></div>{% endif %}
+    </div>
+</div>
 {%- endif %}
 {%- endif %}

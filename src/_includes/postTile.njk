@@ -2,28 +2,34 @@
   <div class="grid grid-cols-3 gap-4 rounded-lg border-2 bg-base-100 border-base-300 p-4 min-h-48">
 
     <div class="col-span-2">
+      <a href="{{ post.url }}">
       <img
         src="{{ post.data.heroimage }}"
         alt="{{ post.data.heroalt}}"
         width="800"
         eleventy:widths="800"
         class="rounded-md" />
+        </a>
     </div>
 
-    <div class="relative">
+    <div class="relative content-center">
       <div>
       <a href="{{ post.url }}" class="text-2xl font-bold hover:underline mt-16">
-        <h2 class"text-primary">
+        <h2 class="">
           {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
         </h2>
       </a>
       </div>
 
       <div>
-        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
-          {{ post.date | readableDate("dd LLLL yyyy") }}
+        <time class="text-sm" datetime="{{ post.date | htmlDateString }}">
+          {{ post.date | readableDate("DDDD") }}
         </time>
        </div>
+
+       <div class="mt-2">
+        {{ post.content | safe  }}
+        </div>
 
        <div class="mt-2 bottom-0 absolute">
          {% if post.data.tags %}
