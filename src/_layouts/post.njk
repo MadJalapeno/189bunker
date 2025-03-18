@@ -32,12 +32,14 @@ layout: base.njk
   </div>
 {% endif %}
 
-  <div>
-    {%- for tag in tags | filterTagList %}
-    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-    {%- endfor %}
-  </div>
+
+  {% if tags %}
+  {% for tag in tags | filterTagList %}
+  {% if tag != "posts" %}
+  <a href="/tags/{{ tag | slugify }}" class="inline-block bg-base-300 rounded-full px-3 py-1 text-sm font-semibold text-base-content mr-2">{{ tag }}</a>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}

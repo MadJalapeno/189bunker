@@ -1,15 +1,53 @@
----js
-const eleventyNavigation = {
-	key: "Archive",
-	order: 2
-};
+---
+title: Archive
+layout: base.njk
+pagination:
+  data: collections.posts
+  size: 5
+  alias: postslist
+  reverse: true
 ---
 <h1>Archive</h1>
 
-{% set postslist = collections.posts %}
+{% if pagination.pageLinks.length > 1 %}
 
-{%- for post in postslist | reverse %}
+  <div class="pb-6 sm:pb-0">
+    <p class="text-md text-gray-500">
+      Showing
+      <span class="font-medium">
+        {{ (pagination.pageNumber * pagination.size) + 1 }}
+      </span>
+      to
+      <span class="font-medium">
+        {% if pagination.nextPageLink %}
+          {{ (pagination.pageNumber * pagination.size) + pagination.size }}
+        {% else %}
+          {{ collections.all.length }}
+        {% endif %}
+      </span>
+      of
+      <span class="font-medium">{{ collections.all.length }}</span>
+      results
+    </p>
+  </div>
+{% endif %}
+
+
+{%- for post in postslist %}
 
   {% include "postTile.njk" %}
 
 {% endfor %}
+
+<nav class="pagination">
+	{% if pagination.previousPageLink %}
+	  <a class="pagination__item" href="{{ pagination.previousPageHref }}">Previous</a>
+	{% else %}
+	  <span class="pagination__item">Previous</span>
+	{% endif %}
+	{% if pagination.nextPageLink %}
+	  <a class="pagination__item" href="{{ pagination.nextPageHref}}">Next</a>
+	{% else %}
+	  <span class="pagination__item">Next</span>
+	{% endif %}
+  </nav>

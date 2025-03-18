@@ -28,6 +28,13 @@ export default function(eleventyConfig) {
 		return Math.min.apply(null, numbers);
 	});
 
+	eleventyConfig.addFilter("split", function(value, delimiter) {
+		if (typeof value === "string") {
+		  return value.split(delimiter);
+		}
+		return value;
+	  });
+
 	// Return the keys used in an object
 	eleventyConfig.addFilter("getKeys", target => {
 		return Object.keys(target);
