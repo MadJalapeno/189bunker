@@ -1,19 +1,38 @@
 
-  <div class="p-4 mb-4 rounded-lg shadow-md">
-    <div>		
-      <a href="{{ post.url }}" class="postlist-link">
-          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-      </a>
+  <div class="grid grid-cols-3 gap-4 rounded-lg border-2 bg-base-100 border-base-300 p-4 min-h-48">
+
+    <div class="col-span-2">
+      <img
+        src="{{ post.data.heroimage }}"
+        alt="{{ post.data.heroalt}}"
+        width="800"
+        eleventy:widths="800"
+        class="rounded-md" />
     </div>
 
-    <img
-      src="{{ post.data.heroimage }}"
-      alt="{{ post.data.heroalt}}"
-      width="600"
-      eleventy:widths="600"
-      class="rounded-md" />
+    <div class="relative">
+      <div>
+      <a href="{{ post.url }}" class="text-2xl font-bold hover:underline mt-16">
+        <h2 class"text-primary">
+          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+        </h2>
+      </a>
+      </div>
 
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
-      {{ post.date | readableDate("LLLL yyyy") }}
-    </time>
+      <div>
+        <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">
+          {{ post.date | readableDate("dd LLLL yyyy") }}
+        </time>
+       </div>
+
+       <div class="mt-2 bottom-0 absolute">
+         {% if post.data.tags %}
+         {% for tag in post.data.tags %}
+         {% if tag != "posts" %}
+         <a href="/tags/{{ tag | slugify }}" class="inline-block bg-base-300 rounded-full px-3 py-1 text-sm font-semibold text-base-content mr-2">{{ tag }}</a>
+         {% endif %}
+         {% endfor %}
+         {% endif %}
+        </div>
+    </div>
 </div>

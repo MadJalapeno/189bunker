@@ -7,4 +7,9 @@ const eleventyNavigation = {
 <h1>Archive</h1>
 
 {% set postslist = collections.posts %}
-{% include "postTile.njk" %}
+
+{%- for post in postslist | reverse %}
+
+  {% include "postTile.njk" %}
+
+{% endfor %}
