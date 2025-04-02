@@ -21,7 +21,7 @@ layout: base.njk
 {% if images %}
   <div class="my-4">
     <h3 class="pb-4 text-lg">Images</h3>
-      <div class="flex">
+      <div class="grid grid-cols-4 gap-4">
       {% for image in images %}
         <a href="{{ image.src }}">
           <img 
