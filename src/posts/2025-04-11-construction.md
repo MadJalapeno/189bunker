@@ -6,7 +6,7 @@ tags:
   - walls
   - floors
   - posts
-heroimage: /assets/images/2025/04/DJI_201.JPG
+heroimage: /assets/images/2025/04/DJI_0201.JPG
 heroalt: 2025-04-07 Ceiling for main floor going in
 images:
   - src: /assets/images/2025/04/DJI_0205.JPG
