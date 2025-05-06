@@ -11,9 +11,9 @@ heroalt: 2025-04-28 Fully built
 images:
   - src: /assets/images/2025/05/DJI_0251.JPG
     alt: 2025-05-04
-  - src: /assets/images/2025/04/DJI_0253.JPG
+  - src: /assets/images/2025/05/DJI_0253.JPG
     alt: 2025-05/04
-  - src: /assets/images/2025/04/DJI_0256.JPG
+  - src: /assets/images/2025/05/DJI_0256.JPG
     alt: 2025-05-04
 ---
 
