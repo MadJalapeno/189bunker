@@ -8,16 +8,27 @@
     <link rel="icon" href="/assets/images/logo.svg">
     <link rel="mask-icon" href="/assets/images/logo.svg" color="#000000">
     <link rel="manifest" href="manifest.json">
-
-		<script src="https://10w.us/api/script.js" data-site-id="5" defer></script>
-		<!-- tailwindcss style sheet -->
+{% if eleventy.env.runMode != "serve" %}
+    <script src="https://10w.us/api/script.js" data-site-id="2" defer></script>
+{% endif %}		<!-- tailwindcss style sheet -->
     <link rel="stylesheet" href="/assets/css/tailwind.css">
 
-
     <style>
-
-
     </style>
+
+    <!--
+    debugging info
+    =============================
+      site.name:    {{ site.name }}
+      site.url:     {{ site.url }}
+      title:        {{ title}}
+      iHeight:      {{ iHeight }}
+      build:        {{ buildInfo.hash }}
+    ---
+      11ty version: {{ eleventy.version }}
+      build mode:   {{ eleventy.env.runMode }}
+    ==============================
+    -->    
   </head>  
 
 <!-- end head includes -->
