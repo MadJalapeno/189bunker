@@ -9,7 +9,7 @@ tags:
 heroimage: /assets/images/2025/06/DJI_0280.JPG
 heroalt: 2025-06-13 digging a new foundation
 images:
-  - src: /assets/images/2025/05/DJI_0284.JPG
+  - src: /assets/images/2025/06/DJI_0284.JPG
     alt: 2025-06-16
 ---
 
